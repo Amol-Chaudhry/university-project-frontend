@@ -1,0 +1,23 @@
+.ce-wrapper{
+    display: block!important;
+  }
+  .ce-chat-list-column {
+    width: 100%!important;
+    max-width: 100%!important;
+    height: 100%!important;
+    max-height: 100%!important;
+  }
+
+.ce-chat-card.ce-active-chat-card {
+    background-color: white!important;
+}
+
+.ce-chat-list {
+    overflow-x: hidden!important;
+    overflow-y: hidden!important;
+    border-right: none!important;
+}
+
+.ce-chat-unread-dot {
+    background-color: #D26AFF!important;
+}
