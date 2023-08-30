@@ -1,13 +1,25 @@
-import { Box, Typography, useTheme} from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import LoginRegisterForm from "./loginRegisterForm";
+import "./index.css";
 
 // Navbar for Login/Register Pages.
 const LoginRegisterPageNavbar = () => {
   const theme = useTheme();
 
   return (
-    <Box p = "0.5rem 0%" width="100%" backgroundColor={theme.palette.background.alt} textAlign="center">
-      <Typography fontSize="30px" sx={{ fontFamily: 'Pacifico' }}  color="primary">BhamConnect</Typography>
+    <Box
+      p="0.5rem 0%"
+      width="100%"
+      backgroundColor={theme.palette.background.alt}
+      textAlign="center"
+    >
+      <Typography
+        fontSize="30px"
+        sx={{ fontFamily: "Pacifico" }}
+        color="primary"
+      >
+        BhamConnect
+      </Typography>
     </Box>
   );
 };
@@ -18,7 +30,8 @@ const LoginRegisterPage = () => {
 
   return (
     <>
-      <LoginRegisterPageNavbar/>
+      <Box className="form-background"></Box>
+      <LoginRegisterPageNavbar />
 
       <Box
         maxWidth={415}
@@ -26,15 +39,9 @@ const LoginRegisterPage = () => {
         mt="3rem"
         mb="2rem"
         mx="auto"
-        width = "92%"
+        width="92%"
         borderRadius="1.3rem"
         backgroundColor={theme.palette.background.alt}
-        boxShadow = {"5px 5px 10px #ccc"}
-        sx={{
-          ":hover":{
-            boxShadow: "10px 10px 20px #ccc"
-          }
-        }}
       >
         <LoginRegisterForm />
       </Box>
