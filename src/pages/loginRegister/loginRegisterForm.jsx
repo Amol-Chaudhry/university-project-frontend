@@ -12,7 +12,7 @@ const signUpValidations = yup.object().shape({
   firstName: yup.string().required("required").max(150, "First Name should not exceed 150 characters."),
   lastName: yup.string().required("required").max(150, "Last Name should not exceed 150 characters."),
   userName: yup.string().required("required").min(2, "User Name should be at least 2 characters.").max(150, "User Name should not exceed 150 characters"),
-  email: yup.string().email("Invalid email").required("required").matches(/@student\.bham\.ac\.uk$/, "Invalid student email"),
+  email: yup.string().email("Invalid email").required("required").matches(/@student\.bham\.ac\.uk$/i, "Invalid student email"),
   password: yup.string().required("required").min(6, "Password should be at least 6 characters."),
   confirmPassword: yup.string().oneOf([yup.ref("password"), null], "Passwords must match").required("required"),
   courseTitle: yup.string().required("required"),
@@ -20,7 +20,7 @@ const signUpValidations = yup.object().shape({
 
 //Validations for Sign In form.
 const signInValidations = yup.object().shape({
-  email: yup.string().email("Invalid email").required("required").matches(/@student\.bham\.ac\.uk$/, "Invalid student email"),
+  email: yup.string().email("Invalid email").required("required").matches(/@student\.bham\.ac\.uk$/i, "Invalid student email"),
   password: yup.string().required("required").min(6, "Invalid password."),
 });
 
