@@ -108,7 +108,7 @@ const UserInfoBriefBox = ({ Id }) => {
               fontWeight="500"
               sx={{
                 "&:hover": {
-                  color: palette.primary.light,
+                  color: "#cfcfcf",
                   cursor: "pointer",
                 },
               }}
