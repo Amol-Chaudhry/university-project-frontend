@@ -9,3 +9,11 @@
     width: 100vw;
     filter: grayscale(100%) brightness(60%) blur(2px);
 }
+.logo-background {
+    background-image: url("../../../public/assets/images/logo.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 29px;
+    width: 40px;
+}

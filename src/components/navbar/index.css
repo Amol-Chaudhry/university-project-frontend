@@ -5,4 +5,13 @@
     right: 0;
     z-index: 100;
   }
+
+  .main-navbar-logo-background {
+    background-image: url("../../../public/assets/images/logo.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 29px;
+    width: 40px;
+  }
   

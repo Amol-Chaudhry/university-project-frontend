@@ -12,7 +12,11 @@ const LoginRegisterPageNavbar = () => {
       width="100%"
       backgroundColor={theme.palette.background.alt}
       textAlign="center"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
     >
+      <Box className="logo-background"></Box>
       <Typography
         fontSize="30px"
         sx={{ fontFamily: "Pacifico" }}

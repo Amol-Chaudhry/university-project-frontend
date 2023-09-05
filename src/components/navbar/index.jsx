@@ -66,22 +66,25 @@ const Navbar = () => {
     <>
       <ModifiedFlexBox padding="0.5rem 6%" backgroundColor={theme.palette.background.alt} 
         className="navbar-container"
-      >
-        <Typography
-          fontWeight="regular"
-          color="primary"
-          onClick={() => navigate("/home")}
-          fontSize="clamp(1rem, 1.75rem, 2rem)"
-          sx={{
-            "&:hover": {
-              color: theme.palette.primary.light,
-              cursor: "pointer",
-            },
-            fontFamily: 'Pacifico'
-          }}
-        >
-          BhamConnect
-        </Typography>
+      > 
+        <Box display="flex" alignItems="center" justifyContent="center">
+          <Box className="main-navbar-logo-background"></Box>
+          <Typography
+            fontWeight="regular"
+            color="primary"
+            onClick={() => navigate("/home")}
+            fontSize="clamp(1rem, 1.75rem, 2rem)"
+            sx={{
+              "&:hover": {
+                color: theme.palette.primary.light,
+                cursor: "pointer",
+              },
+              fontFamily: 'Pacifico'
+            }}
+          > 
+            BhamConnect
+          </Typography>
+        </Box>
 
         {isDesktop ? (
           <ModifiedFlexBox gap="1rem">
