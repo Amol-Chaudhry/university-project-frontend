@@ -111,7 +111,6 @@ const UserTag = ({ postUserId, postUsername, userPictureUrl, date }) => {
 const Post = ({
   postId,
   postUserId,
-  name,
   description,
   resource,
   likes,
@@ -148,6 +147,9 @@ const Post = ({
 
   //State manages Profile Picture associated with user that posted.
   const [postUserProfilePicState, setPostUserProfilePicState] = useState("");
+
+  //State manages full name associated with user that posted.
+  const [name, setName] = useState("");
   
 
   //Handler for adding a new comment
@@ -218,6 +220,7 @@ const Post = ({
       .then((response) => {
         const tempdata = response.data;
         setPostUserProfilePicState(tempdata.profilePictureUrl);
+        setName(`${tempdata.firstName} ${tempdata.lastName}`);
         setIsLoading(false); 
         
       })

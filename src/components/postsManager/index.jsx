@@ -88,8 +88,6 @@ const PostsManager = ({ Id, isUserProfilePage = false }) => {
           ({
             _id,
             userId,
-            firstName,
-            lastName,
             description,
             resource,
             likes,
@@ -100,7 +98,6 @@ const PostsManager = ({ Id, isUserProfilePage = false }) => {
               key={_id}
               postId={_id}
               postUserId={userId}
-              name={`${firstName} ${lastName}`}
               description={description}
               resource={resource}
               likes={likes}
