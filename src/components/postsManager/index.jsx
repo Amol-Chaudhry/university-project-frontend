@@ -94,6 +94,7 @@ const PostsManager = ({ Id, isUserProfilePage = false }) => {
             resource,
             likes,
             comments,
+            createdAt
           }) => (
             <Post
               key={_id}
@@ -104,6 +105,7 @@ const PostsManager = ({ Id, isUserProfilePage = false }) => {
               resource={resource}
               likes={likes}
               comments={comments}
+              createdAt = {createdAt}
               onDeletePost={handleDeletePost}
             />
           )

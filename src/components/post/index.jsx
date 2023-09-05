@@ -30,13 +30,50 @@ const ShadowBox = styled(Box)(({ theme }) => ({
 
 
 //This component displays a user info with post.
-const UserTag = ({ postUserId, postUsername, userPictureUrl }) => {
+const UserTag = ({ postUserId, postUsername, userPictureUrl, date }) => {
 
   //Hooks
   const navigate = useNavigate();
 
   //Theme
   const { palette } = useTheme();
+
+  //Formats Time Stamp for the post.
+  const getTimeStamp = (dateStamp) => {
+    const currentDate = new Date();
+    const targetPostDate = new Date(dateStamp);
+
+    const secondsPassed = Math.floor((currentDate - targetPostDate) / 1000);
+
+    if (secondsPassed < 60) {
+      return `${secondsPassed}s`;
+    } 
+    else if (secondsPassed < 3600) {
+      const minutes = Math.floor(secondsPassed / 60);
+
+      return `${minutes}m`;
+    } 
+    else if (secondsPassed < 86400) {
+      const hours = Math.floor(secondsPassed / 3600);
+
+      return `${hours}h`;
+    } 
+    else if (secondsPassed < 2592000) {
+      const days = Math.floor(secondsPassed / 86400);
+
+      return `${days}d`;
+    } 
+    else if (secondsPassed < 31536000) {
+      const months = Math.floor(secondsPassed / 2592000);
+
+      return `${months}mo`;
+    }
+    else {
+      const years = Math.floor(secondsPassed / 31536000);
+
+      return `${years}y`;
+    }
+  }
 
   return (
     <ModifiedFlexBox>
@@ -61,6 +98,9 @@ const UserTag = ({ postUserId, postUsername, userPictureUrl }) => {
           >
             {postUsername}
           </Typography>
+          <Typography color={palette.neutral.mediumMain} fontSize="0.65rem">
+            {getTimeStamp(date)}
+          </Typography>
         </Box>
       </ModifiedFlexBox>
     </ModifiedFlexBox>
@@ -76,6 +116,7 @@ const Post = ({
   resource,
   likes,
   comments,
+  createdAt,
   onDeletePost
 }) => {
 
@@ -224,6 +265,7 @@ const Post = ({
             postUserId={postUserId}
             postUsername={name}
             userPictureUrl={postUserProfilePicState}
+            date={createdAt}
           />
 
           {(loggedInUserId === postUserId) &&
