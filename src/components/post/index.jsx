@@ -161,7 +161,7 @@ const Post = ({
         commentText: newComment,
       };
     
-      axios.patch(`${process.env.REACT_APP_SERVER_API_URL}/posts/${postId}/comments`, commentData, {
+      axios.post(`${process.env.REACT_APP_SERVER_API_URL}/posts/${postId}/comments`, commentData, {
         headers: {
           Authorization: `Bearer ${jwtToken}`,
           "Content-Type": "application/json",
